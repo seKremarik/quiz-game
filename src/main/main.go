@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"path/filepath"
-	readfile "quiz-game/src/readFile"
+	readfile "quiz-game/src/files"
 )
 
 func main() {

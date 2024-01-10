@@ -27,9 +27,9 @@ func OpenCSV(file string) {
 			log.Fatal(err)
 		}
 
-		fmt.Printf("%+v\n", rec)
+		fmt.Printf("%s\n", rec)
 	}
 }
 
-func CreateFile() {
-}
+// func CreateFile() {
+// }
