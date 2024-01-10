@@ -1,4 +1,4 @@
-package readfile
+package files
 
 import (
 	"encoding/csv"
@@ -30,6 +30,3 @@ func OpenCSV(file string) {
 		fmt.Printf("%s\n", rec)
 	}
 }
-
-// func CreateFile() {
-// }
