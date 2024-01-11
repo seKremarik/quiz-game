@@ -12,5 +12,7 @@ func main() {
 		log.Panic(err)
 	}
 
-	quiz.OpenCSV(file)
+	lines := quiz.OpenCSV(file)
+
+	quiz.PrintQuestion(lines)
 }

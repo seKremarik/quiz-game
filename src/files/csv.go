@@ -2,13 +2,11 @@ package files
 
 import (
 	"encoding/csv"
-	"fmt"
-	"io"
 	"log"
 	"os"
 )
 
-func OpenCSV(file string) {
+func OpenCSV(file string) [][]string {
 	f, err := os.Open(file)
 	if err != nil {
 		log.Fatal(err)
@@ -17,16 +15,10 @@ func OpenCSV(file string) {
 	defer f.Close()
 
 	csvReader := csv.NewReader(f)
-	for {
-		rec, err := csvReader.Read()
-		if err == io.EOF {
-			break
-		}
-
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		fmt.Printf("%s\n", rec)
+	rec, err := csvReader.ReadAll()
+	if err != nil {
+		log.Fatal(err)
 	}
+
+	return rec
 }
